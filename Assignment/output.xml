@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220307 12:28:45.639" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcase" source="/Assignment/tests/testcase.robot">
+<test id="s1-t1" name="Add Product And Enter User Details">
+<kw name="Setup Test" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220307 12:28:46.706" level="INFO">{"browser": "firefox", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "/Assignment/browser/traces/642bc6b2-f4c1-4760-8d13-c6e49027f666"}</msg>
+<msg timestamp="20220307 12:28:49.184" level="INFO">Successfully created browser with options: {"browser":"firefox","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"/Assignment/browser/traces/642bc6b2-f4c1-4760-8d13-c6e49027f666"}</msg>
+<status status="PASS" starttime="20220307 12:28:46.698" endtime="20220307 12:28:49.184"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1280, 'height': 1024}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220307 12:28:49.185" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "viewport": {"width": 1280, "height": 1024}, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220307 12:28:49.232" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220307 12:28:49.233" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'viewport': {'width': 1280, 'height': 1024}, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220307 12:28:49.184" endtime="20220307 12:28:49.233"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://shop.posti.fi/en</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220307 12:28:54.927" level="INFO">Successfully initialized new page object and opened url: https://shop.posti.fi/en</msg>
+<status status="PASS" starttime="20220307 12:28:49.233" endtime="20220307 12:28:54.928"/>
+</kw>
+<status status="PASS" starttime="20220307 12:28:46.698" endtime="20220307 12:28:54.928"/>
+</kw>
+<kw name="Capture System Information">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220307 12:28:56.881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220307 12:28:54.929" endtime="20220307 12:28:56.881"/>
+</kw>
+<status status="PASS" starttime="20220307 12:28:54.929" endtime="20220307 12:28:56.881"/>
+</kw>
+<kw name="Cookie PopUp">
+<doc>Accept the cookies</doc>
+<kw name="Get Element Count" library="Browser">
+<arg>[id=onetrust-reject-all-handler]</arg>
+<arg>then</arg>
+<arg>${True} if value else ${False}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:28:56.882" endtime="20220307 12:28:56.980"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>[id=onetrust-reject-all-handler]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:28:56.980" endtime="20220307 12:28:59.396"/>
+</kw>
+<status status="PASS" starttime="20220307 12:28:56.882" endtime="20220307 12:28:59.404"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${loginButton}</arg>
+<arg>contains</arg>
+<arg>Log in</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:28:59.406" endtime="20220307 12:28:59.931"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${searchButton}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220307 12:28:59.979" level="INFO">Waited for Element with selector //span[@label='Search'] at state visible</msg>
+<status status="PASS" starttime="20220307 12:28:59.932" endtime="20220307 12:28:59.979"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${searchButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:28:59.988" endtime="20220307 12:29:00.416"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${searchBar}</arg>
+<arg>Tatu and Patu</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:00.418" level="INFO">Fills the text 'Tatu and Patu' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:00.418" endtime="20220307 12:29:00.680"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${searchResult}</arg>
+<arg>Visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220307 12:29:02.068" level="INFO">Waited for Element with selector //span[@class='highlight'] at state visible</msg>
+<status status="PASS" starttime="20220307 12:29:00.681" endtime="20220307 12:29:02.069"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${searchResult}</arg>
+<arg>contains</arg>
+<arg>Tatu and Patu</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:02.069" endtime="20220307 12:29:02.245"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${searchResult}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:02.246" endtime="20220307 12:29:02.525"/>
+</kw>
+<kw name="Capture System Information">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220307 12:29:02.850" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220307 12:29:02.527" endtime="20220307 12:29:02.850"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:02.526" endtime="20220307 12:29:02.850"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${quantityValue}</arg>
+<arg>2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:02.851" level="INFO">Fills the text '2' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:02.851" endtime="20220307 12:29:08.673"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${addtocartButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:08.674" endtime="20220307 12:29:11.008"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${gotocartButton}</arg>
+<arg>Visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220307 12:29:11.384" level="INFO">Waited for Element with selector //button[@data-testid='go-to-cart'] at state visible</msg>
+<status status="PASS" starttime="20220307 12:29:11.009" endtime="20220307 12:29:11.385"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${gotocartButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:11.385" endtime="20220307 12:29:11.928"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${checkoutButton}</arg>
+<arg>Visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220307 12:29:13.650" level="INFO">Waited for Element with selector [id=cart-totals-cta] at state visible</msg>
+<status status="PASS" starttime="20220307 12:29:11.929" endtime="20220307 12:29:13.650"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${carttotalValue}</arg>
+<arg>contains</arg>
+<arg>25.20</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:13.654" endtime="20220307 12:29:14.048"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${checkoutButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220307 12:29:14.049" endtime="20220307 12:29:15.112"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${saveButton}</arg>
+<arg>Visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220307 12:29:15.180" level="INFO">Waited for Element with selector //span[@mode='primary'] at state visible</msg>
+<status status="PASS" starttime="20220307 12:29:15.118" endtime="20220307 12:29:15.180"/>
+</kw>
+<kw name="Input User Information">
+<arg>&amp;{USER_DETAIL}</arg>
+<doc>User Information to be provided in the Account Details Page</doc>
+<kw name="Log" library="BuiltIn">
+<arg>${parameters}</arg>
+<arg>console=no</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220307 12:29:15.182" level="INFO">{'First Name': 'DummyUsername', 'Last Name': 'password123!', 'Address 1': 'Virkakatu 1', 'Address 2': '', 'Post Code': '90570', 'Post City': 'Oulu', 'Email Address': 'test@test.com', 'Telephone Number': ''}</msg>
+<status status="PASS" starttime="20220307 12:29:15.182" endtime="20220307 12:29:15.182"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${firstName}</arg>
+<arg>${parameters}[First Name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:15.183" level="INFO">Types the text 'DummyUsername' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:15.182" endtime="20220307 12:29:18.633"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:20.634" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:18.633" endtime="20220307 12:29:20.634"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${lastName}</arg>
+<arg>${parameters}[Last Name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:20.635" level="INFO">Types the text 'password123!' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:20.635" endtime="20220307 12:29:21.725"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:23.729" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:21.725" endtime="20220307 12:29:23.729"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${addressLine1}</arg>
+<arg>${parameters}[Address 1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:23.730" level="INFO">Types the text 'Virkakatu 1' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:23.730" endtime="20220307 12:29:24.611"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:26.612" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:24.611" endtime="20220307 12:29:26.612"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${addressLine2}'!='${EMPTY}'</arg>
+<arg>Fill Text</arg>
+<arg>${addressLine2}</arg>
+<arg>${parameters}[Address 2]]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fill Text" library="Browser">
+<arg>${addressLine2}</arg>
+<arg>${parameters}[Address 2]]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:26.614" level="INFO">Fills the text ']' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:26.613" endtime="20220307 12:29:26.723"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:26.612" endtime="20220307 12:29:26.723"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:28.729" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:26.728" endtime="20220307 12:29:28.729"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${postalCode}</arg>
+<arg>${parameters}[Post Code]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:28.730" level="INFO">Types the text '90570' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:28.730" endtime="20220307 12:29:29.338"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:31.339" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:29.338" endtime="20220307 12:29:31.340"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${postalCity}</arg>
+<arg>${parameters}[Post City]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:31.340" level="INFO">Types the text 'Oulu' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:31.340" endtime="20220307 12:29:31.719"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:33.720" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:31.719" endtime="20220307 12:29:33.721"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${telephoneNumber}'!='${EMPTY}'</arg>
+<arg>Fill Text</arg>
+<arg>${telephoneNumber}</arg>
+<arg>${parameters}[Telephone Number]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Fill Text" library="Browser">
+<arg>${telephoneNumber}</arg>
+<arg>${parameters}[Telephone Number]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:33.723" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:33.722" endtime="20220307 12:29:33.804"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:33.721" endtime="20220307 12:29:33.804"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:35.805" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:33.804" endtime="20220307 12:29:35.806"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${emailAddress}</arg>
+<arg>${parameters}[Email Address]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220307 12:29:35.806" level="INFO">Types the text 'test@test.com' in the given field.</msg>
+<status status="PASS" starttime="20220307 12:29:35.806" endtime="20220307 12:29:36.989"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220307 12:29:38.990" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220307 12:29:36.989" endtime="20220307 12:29:38.990"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:15.181" endtime="20220307 12:29:38.990"/>
+</kw>
+<kw name="Capture System Information">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220307 12:29:39.174" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220307 12:29:38.992" endtime="20220307 12:29:39.174"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:38.991" endtime="20220307 12:29:39.175"/>
+</kw>
+<kw name="Teardown Test Execution" type="TEARDOWN">
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220307 12:29:39.196" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220307 12:29:39.176" endtime="20220307 12:29:39.196"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220307 12:29:40.686" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220307 12:29:39.196" endtime="20220307 12:29:40.687"/>
+</kw>
+<status status="PASS" starttime="20220307 12:29:39.175" endtime="20220307 12:29:40.687"/>
+</kw>
+<status status="PASS" starttime="20220307 12:28:46.693" endtime="20220307 12:29:40.693"/>
+</test>
+<status status="PASS" starttime="20220307 12:28:45.640" endtime="20220307 12:29:40.702"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcase">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
